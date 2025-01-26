@@ -8,7 +8,7 @@ This repository contains implementations of various design patterns in C++.
 
 The Observer Pattern is implemented in the [Observer_pattern/ObserverDesignPattern.cpp](Observer_pattern/ObserverDesignPattern.cpp) file. This pattern allows an object (the observable) to notify other objects (the observers) about changes in its state.
 
-![Observer Pattern](Observer_pattern/Observer_Pattern)
+![Observer Pattern](Design101 /Observer_pattern/Observer_Pattern.png)
 
 ### Strategy Pattern
 
