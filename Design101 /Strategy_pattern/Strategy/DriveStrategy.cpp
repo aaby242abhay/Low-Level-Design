@@ -1,12 +1,14 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+//strategy Interface
 class DriveStrategy {
 public:
     virtual void drive() = 0;
     virtual ~DriveStrategy() = default;     //defaulted virtual contructor
 };
 
+//Concrete Strategy
 class NormalDriveStrategy : public DriveStrategy {
 public:
     void drive() override{
@@ -14,6 +16,7 @@ public:
     }
 };
 
+//Concrete Strategy
 class SpecialDriveStrategy : public DriveStrategy {
 public:
     void drive() override{
@@ -21,6 +24,8 @@ public:
     }
 };
 
+
+//BASE CLASS
 class Vehicle{
     DriveStrategy* dv;                  //this is a pointer to the drive strategy
 public:
@@ -32,6 +37,7 @@ public:
     }
 };
 
+//Derived class
 class OffRoadVehicle : public Vehicle{
 public:
     OffRoadVehicle() : Vehicle(new SpecialDriveStrategy()){
@@ -39,6 +45,7 @@ public:
     }
 };
 
+//Derived class
 class SportsVehicle : public Vehicle{
 public:
     SportsVehicle() : Vehicle(new SpecialDriveStrategy()){
@@ -46,6 +53,7 @@ public:
     }
 };
 
+//Derived class
 class Alto : public Vehicle{
 public:
     Alto() : Vehicle(new NormalDriveStrategy()){
@@ -53,6 +61,8 @@ public:
     }
 };
 
+
+//Client code
 int main(){
     Vehicle* v1 = new OffRoadVehicle();
     Vehicle* v2 = new SportsVehicle();
